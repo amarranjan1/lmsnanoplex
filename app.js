@@ -68,11 +68,11 @@ const corsOptions = {
   credentials: true
 };
 
-// Allow requests from a specific origin
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://lmsnanoplex.vercel.app');
-  next();
-});
+// // Allow requests from a specific origin
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://lmsnanoplex.vercel.app');
+//   next();
+// });
 
 app.use(cors(corsOptions));
 
