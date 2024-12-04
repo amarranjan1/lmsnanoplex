@@ -61,7 +61,7 @@ console.log('Current time in Asia/Kolkata (12-hour format with AM/PM):', indiaTi
 
 // Middleware
 const corsOptions = {
-  origin: ['https://lms.naoplex.in', 'https://creator-lac.vercel.app'],
+  origin: ['https://lms.naoplex.in', 'https://lmsnanoplex.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   
@@ -70,7 +70,7 @@ const corsOptions = {
 
 // Allow requests from a specific origin
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://creator-lac.vercel.app');
+  res.header('Access-Control-Allow-Origin', 'https://lmsnanoplex.vercel.app');
   next();
 });
 
