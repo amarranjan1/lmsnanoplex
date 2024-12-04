@@ -61,23 +61,23 @@ console.log('Current time in Asia/Kolkata (12-hour format with AM/PM):', indiaTi
 
 // Middleware
 const corsOptions = {
-  origin: ['https://lms.naoplex.in', 'https://lmsnanoplex.vercel.app'],
+  origin: function (origin, callback) {
+    if (['https://lms.nanoplex.in', 'https://lmsnanoplex.vercel.app'].includes(origin) || !origin) {
+      // Allow requests from both origins
+      callback(null, true);
+    } else {
+      // Reject requests from other origins
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  
   credentials: true,
 };
 
+// Apply the CORS middleware with updated options
+app.use(cors(corsOptions));
 
-// Allow requests from a specific origin
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://lmsnanoplex.vercel.app');
-  next();
-});
-
-//app.use(cors(corsOptions));
-
-app.options('*', cors());
 
 //s
 
