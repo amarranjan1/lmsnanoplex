@@ -12,7 +12,7 @@
     "json2csv": "^6.0.0-alpha.2",
     "jsonwebtoken": "^9.0.2",
     "moment-timezone": "^0.5.45",
-    "mongodb": "^6.9.0",
+    "mongodb": "^6.11.0",
     "mongoose": "^8.7.0",
     "multer": "^1.4.5-lts.1",
     "node-cron": "^3.0.3",
@@ -30,5 +30,4 @@
   "author": "",
   "license": "ISC",
   "description": ""
-  
 }

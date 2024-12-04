@@ -65,7 +65,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   
-  credentials: true
+  credentials: true,
 };
 
 // Allow requests from a specific origin
@@ -76,7 +76,9 @@ app.use((req, res, next) => {
 
 app.use(cors(corsOptions));
 
-app.options('*', cors());
+//app.options('*', cors());
+
+app.options('*', cors(corsOptions));
 
 
 app.use(bodyParser.json({ limit: '20mb' })); // Increased limit
