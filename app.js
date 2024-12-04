@@ -76,9 +76,7 @@ app.use((req, res, next) => {
 
 app.use(cors(corsOptions));
 
-//app.options('*', cors());
-
-app.options('*', cors(corsOptions));
+app.options('*', cors());
 
 
 app.use(bodyParser.json({ limit: '20mb' })); // Increased limit
